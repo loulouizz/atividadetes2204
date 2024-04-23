@@ -5,6 +5,8 @@ const {
     divisao,
     verificaPalindromo,
     celsiusParaFahrenheit,
+    fahrenheitParaCelsius,
+    validaCPF,
 } = require("./functions");
 
 function testCalculadora() {
@@ -37,4 +39,11 @@ function testCalculadora() {
     console.log(celsiusParaFahrenheit(100) === 212); // Deve retornar true
     console.log(fahrenheitParaCelsius(32) === 0); // Deve retornar true
     console.log(fahrenheitParaCelsius(212) === 100); // Deve retornar true
+  }
+
+  function testValidadorCPF() {
+    console.log(validaCPF("529.982.247-25") === true); // CPF válido
+    console.log(validaCPF("111.111.111-11") === false); // CPF inválido (todos os números iguais)
+    console.log(validaCPF("123.456.789-09") === false); // CPF inválido
+    console.log(validaCPF("123.456.789-00") === false); // CPF inválido (dígitos verificadores incorretos)
   }

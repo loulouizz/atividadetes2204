@@ -3,6 +3,7 @@ const {
     subtracao,
     multiplicacao,
     divisao,
+    verificaPalindromo,
 } = require("./functions");
 
 function testCalculadora() {
@@ -22,4 +23,10 @@ function testCalculadora() {
     console.log(divisao(10, 2) === 5); // Deve retornar true
     console.log(divisao(15, -3) === -5); // Deve retornar true
     console.log(() => divisao(8, 0)); // Deve lançar um erro
+  }
+
+  function testPalindromo() {
+    console.log(verificaPalindromo("radar") === true); // Deve retornar true
+    console.log(verificaPalindromo("hello") === false); // Deve retornar true
+    console.log(verificaPalindromo("level") === true); // Deve retornar true
   }

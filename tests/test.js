@@ -4,6 +4,7 @@ const {
     multiplicacao,
     divisao,
     verificaPalindromo,
+    celsiusParaFahrenheit,
 } = require("./functions");
 
 function testCalculadora() {
@@ -29,4 +30,11 @@ function testCalculadora() {
     console.log(verificaPalindromo("radar") === true); // Deve retornar true
     console.log(verificaPalindromo("hello") === false); // Deve retornar true
     console.log(verificaPalindromo("level") === true); // Deve retornar true
+  }
+
+  function testConversorTemperatura() {
+    console.log(celsiusParaFahrenheit(0) === 32); // Deve retornar true
+    console.log(celsiusParaFahrenheit(100) === 212); // Deve retornar true
+    console.log(fahrenheitParaCelsius(32) === 0); // Deve retornar true
+    console.log(fahrenheitParaCelsius(212) === 100); // Deve retornar true
   }

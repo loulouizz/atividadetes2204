@@ -7,7 +7,9 @@ const {
     celsiusParaFahrenheit,
     fahrenheitParaCelsius,
     validaCPF,
-} = require("./functions");
+    verificaPrimo,
+    ordenaLista
+  } = require("./functions");
 
 function testCalculadora() {
     console.log("Testando adição:");
@@ -46,4 +48,15 @@ function testCalculadora() {
     console.log(validaCPF("111.111.111-11") === false); // CPF inválido (todos os números iguais)
     console.log(validaCPF("123.456.789-09") === false); // CPF inválido
     console.log(validaCPF("123.456.789-00") === false); // CPF inválido (dígitos verificadores incorretos)
+  }
+
+  function testPrimo() {
+    console.log(verificaPrimo(5) === true); // Deve retornar true
+    console.log(verificaPrimo(16) === false); // Deve retornar true
+    console.log(verificaPrimo(23) === true); // Deve retornar true
+  }
+
+  function testOrdenadorLista() {
+    console.log(JSON.stringify(ordenaLista([3, 1, 2], "crescente")) === JSON.stringify([1, 2, 3])); // Deve retornar true
+    console.log(JSON.stringify(ordenaLista([5, 8, 2], "decrescente")) === JSON.stringify([8, 5, 2])); // Deve retornar true
   }
